@@ -12,7 +12,7 @@
                 <div class="card-body">
                     <h5 class="card-title">名前：{{ $clinical->name }}</h5>
                     <p class="card-text">年齢：{{ $clinical->age }}歳</p>
-                    <a href="#" class="btn btn-primary">detail</a>
+                    <a href="{{ route('clinicals.show', $clinical->id) }}" class="btn btn-primary">detail</a>
                 </div>
                 <div class="card-footer text-muted">
                     投稿日時：{{ $clinical->created_at }}

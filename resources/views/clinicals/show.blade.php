@@ -5,62 +5,47 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-              @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-
-            <form action="{{ route('clinicals.store') }}" method="POST">
-            {{csrf_field()}}
 
                 <div class="form-group">
-                    <label>名前</label>
-                    <input type="text" class="form-control" placeholder="名前" name="name">
+                    <label>名前:{{ $clinical->name }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>年齢</label>
-                    <input type="number" class="form-control" placeholder="29" name="age">歳
+                    <label>年齢:{{ $clinical->age }}歳</label>
                 </div>
 
                 <div class="form-group">
-                    <label>性別</label>
+                    <label>性別:{{ $clinical->sex }}</label>
                 </div>
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sex" id="radio2a" value="男">
-                    <label class="form-check-label" for="radio2a">男</label>
+                    <input class="form-check-input" type="radio" name="sex" id="radio2a" value="男"
+                    @if (old('sex', $clinical->sex) == '男') checked @endif>
+                    <label class="form-check-label" for="radio2a" 
+                    >男</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sex" id="radio2b" value="女">
+                    <input class="form-check-input" type="radio" name="sex" id="radio2b" value="女"
+                    @if (old('sex', $clinical->sex) == '女') checked @endif>
                     <label class="form-check-label" for="radio2b">女</label>
                   </div>
                 </div>
 
                 <div class="form-group">
-                    <label>電話番号</label>
-                    <input type="tel" class="form-control" placeholder="090-1111-2222" name="tel_num">
+                    <label>電話番号:{{ $clinical->tel }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>メール</label>
-                    <input type="email" class="form-control" placeholder="test@gmail.com" name="email">
+                    <label>メール:{{ $clinical->email }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>郵便番号</label>
-                    <input type="text" class="form-control" placeholder="733-0003" name="postal_num">
+                    <label>郵便番号:{{ $clinical->postal_num }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>住所</label>
-                    <input type="text" class="form-control" placeholder="広島県呉市" name="address">
+                    <label>住所:{{ $clinical->address }}</label>
                 </div>
 
                 <div class="form-group">
@@ -69,44 +54,38 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="parking_lot" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="parking_lot" id="radio2a" value="有" @if (old('parking_lot', $clinical->parking_lot) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="parking_lot" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="parking_lot" id="radio2b" value="無" @if (old('parking_lot', $clinical->parking_lot) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
                 
                 <div class="form-group">
-                    <label>ニーズ</label>
-                    <textarea class="form-control" placeholder="content" rows="5" name="needs"></textarea>
+                    <label>ニーズ:{{ $clinical->needs }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>既往歴①</label>
-                    <input type="text" class="form-control" placeholder="CVA" name="medical_history_f">
+                    <label>既往歴①:{{ $clinical->medical_history_f }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>既往歴②</label>
-                    <input type="text" class="form-control" placeholder="MSA" name="medical_history_s">
+                    <label>既往歴②:{{ $clinical->medical_history_s }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>既往歴③</label>
-                    <input type="text" class="form-control" placeholder="その他" name="medical_history_t">
+                    <label>既往歴③:{{ $clinical->medical_history_t }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>ROM</label>
-                    <input type="text" class="form-control" placeholder="肩関節外転" name="rom">
+                    <label>ROM:{{ $clinical->rom }}</label>
                 </div>
 
                 <div class="form-group">
-                    <label>仕事</label>
-                    <input type="text" class="form-control" placeholder="プログラマ" name="work">
+                    <label>仕事:{{ $clinical->work }}</label>
                 </div>
 
                 <div class="form-group">
@@ -119,12 +98,12 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有" @if (old('adl_basic', $clinical->adl_basic) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無" @if (old('adl_basic', $clinical->adl_basic) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
@@ -135,12 +114,12 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有" @if (old('adl_eating', $clinical->adl_eating) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無" @if (old('adl_eating', $clinical->adl_eating) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
@@ -151,12 +130,12 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有" @if (old('adl_grooming', $clinical->adl_grooming) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無" @if (old('adl_grooming', $clinical->adl_grooming) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
@@ -167,12 +146,12 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有" @if (old('adl_toilet', $clinical->adl_toilet) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無" @if (old('adl_toilet', $clinical->adl_toilet) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
@@ -183,12 +162,12 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有" @if (old('adl_clothes', $clinical->adl_clothes) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無" @if (old('adl_clothes', $clinical->adl_clothes) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
@@ -199,23 +178,25 @@
 
                 <div class="form-group">
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有">
+                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有" @if (old('adl_bathing', $clinical->adl_bathing) == '有') checked @endif>
                     <label class="form-check-label" for="radio2a">有</label>
                   </div>
                   
                   <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無">
+                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無" @if (old('adl_bathing', $clinical->adl_bathing) == '無') checked @endif>
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
                 </div>
 
                 <div class="form-group">
-                    <label>その他</label>
-                    <textarea class="form-control" placeholder="content" rows="5" name="others"></textarea>
+                    <label>その他:{{ $clinical->others }}</label>
                 </div>
 
-                <button type="submit" class="btn btn-primary">create</button>
-            </form>
+                <div class="form-group">
+                  <a href="{{ route('clinicals.edit', $clinical->id) }}" class="btn btn-primary">edit</a>
+                </div>
+
+
         </div>
     </div>
 </div>

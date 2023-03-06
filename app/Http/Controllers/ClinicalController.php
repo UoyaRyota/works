@@ -58,7 +58,8 @@ class ClinicalController extends Controller
      */
     public function show($id)
     {
-        //
+        $clinical = Clinical::find($id);
+        return view('clinicals.show', compact('clinical'));
     }
 
     /**
@@ -69,7 +70,8 @@ class ClinicalController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clinical = Clinical::find($id);
+        return view('clinicals.edit', compact('clinical'));
     }
 
     /**
@@ -79,9 +81,11 @@ class ClinicalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ClinicalRequest $request, $id)
     {
-        //
+        $clinical = Clinical::find($id);
+        $clinical->update($request->all());
+        return view('clinicals.show', compact('clinical'));
     }
 
     /**
