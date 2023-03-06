@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\ClinicalRequest;
+use App\Models\Clinical;
+use Auth;
 class ClinicalController extends Controller
 {
     /**
@@ -11,9 +13,16 @@ class ClinicalController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        return view('clinicals.index');
+        $clinicals = Clinical::all();
+        return view('clinicals.index', compact('clinicals'));
     }
 
     /**
@@ -23,7 +32,7 @@ class ClinicalController extends Controller
      */
     public function create()
     {
-        //
+        return view('clinicals.create'); 
     }
 
     /**
@@ -32,9 +41,13 @@ class ClinicalController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ClinicalRequest $request)
     {
-        //
+        $input = $request->all();
+        $input['user_id'] = Auth::id();
+        Clinical::create($input);
+
+        return redirect()->route('clinicals.index');
     }
 
     /**
