@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ClinicalController;
+use App\Http\Controllers\KarteController;
+use App\Http\Controllers\ReservationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +21,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('clinicals', ClinicalController::class);
+Route::resource('kartes', KarteController::class);
+Route::resource('reservations', ReservationController::class);
