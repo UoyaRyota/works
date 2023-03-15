@@ -3,8 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-
+        <di class="col-md-8">
 
                 <div class="form-group">
                     <label>名前:{{ $clinical->name }}</label>
@@ -195,6 +194,39 @@
                 <div class="form-group">
                   <a href="{{ route('clinicals.edit', $clinical->id) }}" class="btn btn-primary">edit</a>
                 </div>
+
+                <div class="row justify-content-center">
+                  <div class="col-md-8">
+                      <form action="{{ route('kartes.store') }}" method="POST">
+                      {{csrf_field()}}
+                      <input type="hidden" name="clinical_id" value="{{ $clinical->id }}">
+                          <div class="form-group">
+                              <label>カルテ</label>
+                              <textarea class="form-control" 
+                              placeholder="内容" rows="5" name="karte_body"></textarea>
+                          </div>
+                          <button type="submit" class="btn btn-primary">comment</button>
+                      </form>
+                  </div>
+                </div>
+                <div class="row justify-content-center">
+
+                  <div class="col-md-8">
+                      @foreach ($clinical->kartes as $karte)
+                      <div class="card mt-3">
+                          <h5 class="card-header">投稿者：{{ $clinical->user->name }}</h5>
+                          <div class="card-body">
+                              <h5 class="card-title">投稿日時：{{ $karte->created_at }}</h5>
+                              <p class="card-text">内容：{{ $karte->karte_body }}</p>
+                          </div>
+                      </div>
+                      <div class="form-group">
+                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn-primary">edit</a>
+                      </div>
+                      @endforeach
+                  </div>     
+                </div>
+
 
 
         </div>

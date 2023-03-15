@@ -22,6 +22,7 @@ class ClinicalController extends Controller
     public function index()
     {
         $clinicals = Clinical::all();
+        $clinicals->load('user');
         return view('clinicals.index', compact('clinicals'));
     }
 
@@ -59,6 +60,7 @@ class ClinicalController extends Controller
     public function show($id)
     {
         $clinical = Clinical::find($id);
+        $clinical->load('user', 'kartes'); 
         return view('clinicals.show', compact('clinical'));
     }
 

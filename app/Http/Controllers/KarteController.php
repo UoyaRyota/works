@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\KarteRequest;
+use App\Models\Karte;
+use App\Models\Clinical;
+use Auth;
 
 class KarteController extends Controller
 {
@@ -11,6 +15,11 @@ class KarteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         return view('kartes.index');
@@ -32,9 +41,16 @@ class KarteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(KarteRequest $request)
     {
-        //
+        // dd($request);
+        $clinical = Clinical::find($request->clinical_id);
+        $karte = new Karte;
+        $karte -> karte_body = $request -> karte_body;
+        $karte -> user_id = Auth::id();
+        $karte -> clinical_id = $request -> clinical_id;
+        $karte -> save();
+        return view('clinicals.show', compact('clinical')); 
     }
 
     /**
@@ -56,7 +72,8 @@ class KarteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $karte = Karte::find($id);
+        return view('kartes.edit', compact('karte'));
     }
 
     /**
@@ -66,9 +83,14 @@ class KarteController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(KarteRequest $request, $id)
     {
-        //
+        $karte = Karte::find($id);
+        $karte = Clinical::find($id);
+        
+        // dd($request);
+        $karte->update($request->all());
+        return view('clinicals');
     }
 
     /**

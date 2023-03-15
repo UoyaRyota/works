@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Reservation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Requests\ReservationRequest;
+use Auth;
 
 class ReservationController extends Controller
 {
@@ -13,7 +17,8 @@ class ReservationController extends Controller
      */
     public function index()
     {
-        return view('reservations.index');
+        $reservations = Reservation::all();
+        return view('reservations.index', compact('reservations'));
     }
 
     /**
@@ -23,7 +28,9 @@ class ReservationController extends Controller
      */
     public function create()
     {
-        //
+        $clinicals = DB::select('select * from clinicals');
+        $data = ['title' => 'メンバーリスト', 'clinicals' => $clinicals];
+        return view('reservations.create', $data);
     }
 
     /**
@@ -32,9 +39,12 @@ class ReservationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ReservationRequest $request)
     {
-        //
+        $input = $request->all();
+        Reservation::create($input);
+
+        return redirect()->route('reservations.index');
     }
 
     /**
@@ -45,7 +55,8 @@ class ReservationController extends Controller
      */
     public function show($id)
     {
-        //
+        $reservation = Reservation::find($id);
+        return view('reservations.show', compact('reservation'));
     }
 
     /**
@@ -56,7 +67,12 @@ class ReservationController extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $reservation = Reservation::find($id);
+        $clinicals = DB::select('select * from clinicals');
+        // dd($clinicals);
+
+        return view('reservations.edit', compact('reservation','clinicals'));
     }
 
     /**
@@ -66,9 +82,12 @@ class ReservationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(ReservationRequest $request, $id)
     {
-        //
+        $reservation = Reservation::find($id);
+        $reservation->update($request->all());
+        
+        return view('reservations.show', compact('reservation'));
     }
 
     /**
