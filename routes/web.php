@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClinicalController;
 use App\Http\Controllers\KarteController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,3 +26,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('clinicals', ClinicalController::class);
 Route::resource('kartes', KarteController::class);
 Route::resource('reservations', ReservationController::class);
+Route::resource('users', UserController::class);

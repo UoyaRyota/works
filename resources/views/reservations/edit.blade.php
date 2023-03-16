@@ -1,11 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<?php
-  // print('<pre>');
-  // var_dump($reservation);
-  // print('</pre>');
-?>
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
