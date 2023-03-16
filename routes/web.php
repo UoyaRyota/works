@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/clinicals/search', 'App\Http\Controllers\ClinicalController@search')->name('clinicals.search'); 
+// REST設計に変更する必要あり
 Route::resource('clinicals', ClinicalController::class);
 Route::resource('kartes', KarteController::class);
 Route::resource('reservations', ReservationController::class);

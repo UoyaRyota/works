@@ -27,6 +27,24 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
+                @if ( request()->is('*users/show*') )
+        
+                @else
+                <form method="POST" action="{{route('clinicals.search')}}" class="search_container">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <input type="search" class="form-control mr-sm-2" name="search"  value="" placeholder="キーワード" aria-label="検索...">
+                    </div>
+                        <input type="submit" value="検索" class="btn btn-info">
+                </form>
+                @endif
+
+
+
+
+
+                
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">

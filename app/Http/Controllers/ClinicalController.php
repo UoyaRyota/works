@@ -100,4 +100,11 @@ class ClinicalController extends Controller
     {
         //
     }
+
+    public function search(Request $request) {
+        $clinicals = Clinical::where('name', 'like', "%{$request->search}%")->paginate(5);
+
+        return view('clinicals.index', compact('clinicals'));
+
+    }
 }
