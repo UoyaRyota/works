@@ -85,12 +85,16 @@ class KarteController extends Controller
      */
     public function update(KarteRequest $request, $id)
     {
-        $karte = Karte::find($id);
-        $karte = Clinical::find($id);
+        // $clinical = Karte::find($id);
+        // $clinical = Clinical::find($id);
         
-        // dd($request);
-        $karte->update($request->all());
-        return view('clinicals');
+        // // dd($request);
+        // $clinical->update($request->all());
+        // $karte -> karte_body = $request -> karte_body;
+        // $karte -> user_id = Auth::id();
+        // $karte -> clinical_id = $request -> clinical_id;
+        // $karte -> save();
+        // return view('clinicals.show' , compact('clinical'));
     }
 
     /**

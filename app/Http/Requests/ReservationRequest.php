@@ -24,11 +24,16 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
+            'user_name'  => 'required',
+            'reservation_date'  => 'required',
         ];
     }
-public function messages()
-{
-    return [
-    ];
-}
+    
+    public function messages()
+    {
+        return [
+            'user_name.required'  => '内容は必須です。',
+            'reservation_date.required'  => '内容は必須です。',
+        ];
+    }
 }

@@ -199,6 +199,17 @@
                   <div class="col-md-8">
                       <form action="{{ route('kartes.store') }}" method="POST">
                       {{csrf_field()}}
+
+                      @if ($errors->any()) 
+                          <div class="alert alert-danger">
+                              <ul>
+                                  @foreach ($errors->all() as $error)
+                                      <li>{{ $error }}</li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                      @endif
+
                       <input type="hidden" name="clinical_id" value="{{ $clinical->id }}">
                           <div class="form-group">
                               <label>カルテ</label>

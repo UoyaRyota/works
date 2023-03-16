@@ -7,6 +7,16 @@
     {{csrf_field()}}
     {{method_field('PATCH')}}
 
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+
       <div class="form-group">
         <label>カルテ</label>
         <textarea class="form-control" placeholder="内容" rows="5" name="karte_body">{{$karte->karte_body}}</textarea>

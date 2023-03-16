@@ -24,13 +24,13 @@ class KarteRequest extends FormRequest
     public function rules()
     {
         return [
-            // 'body'  => 'required',
+            'karte_body'  => 'required',
         ];
     }
     public function messages()
     {
         return [
-            // 'body.required'  => '内容は必須です。',
+            'karte_body.required'  => '内容は必須です。',
         ];
     }
 }

@@ -7,7 +7,18 @@
         <div class="col-md-8">
             <form action="{{ route('reservations.update', $reservation->id) }}" method="POST">
             {{csrf_field()}}
-                {{method_field('PATCH')}}
+            {{method_field('PATCH')}}
+
+                @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+                @endif
+
                 <div class="form-group">
                     <label>日付</label>
                     <input type="date" class="form-control" placeholder="" name="reservation_date" value="{{ $reservation->reservation_date}}">
