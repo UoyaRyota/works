@@ -81,7 +81,7 @@
 
                 <div class="form-group">
                     <label>郵便番号</label>
-                    <input type="text" class="form-control @if($errors->has('postal_num')) validation_border @endif" placeholder="733-0003" name="postal_num">
+                    <input type="text" class="form-control @if($errors->has('postal_num')) validation_border @endif" placeholder="733-0003" name="postal_num" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
 
                     @if ($errors->has('postal_num')) 
                         <ul class="validation_message" style="color: red;">

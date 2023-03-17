@@ -20,6 +20,8 @@
 
     <!-- Scripts -->
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    <script src="https://ajaxzip3.github.io/ajaxzip3.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -43,12 +45,6 @@
                         <input type="submit" value="検索" class="btn btn-info">
                 </form>
                 @endif
-
-
-
-
-
-                
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
