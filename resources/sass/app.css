@@ -1,0 +1,9 @@
+@import url("https://fonts.bunny.net/css?family=Nunito");
+.validation_message {
+  color: #c20c33;
+}
+
+.validation_border {
+  border-color: #c20c33;
+  background-color: #ffd9e1;
+}/*# sourceMappingURL=app.css.map */

@@ -24,13 +24,14 @@ class KarteRequest extends FormRequest
     public function rules()
     {
         return [
-            'karte_body'  => 'required',
+            'karte_body'  => 'required|min:20',
         ];
     }
     public function messages()
     {
         return [
             'karte_body.required'  => '内容は必須です。',
+            'karte_body.max'      => 'カルテの記録は20文字以上で記入してください。',
         ];
     }
 }

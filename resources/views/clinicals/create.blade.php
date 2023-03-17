@@ -5,27 +5,27 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
 
-              @if ($errors->any())
-                  <div class="alert alert-danger">
-                      <ul>
-                          @foreach ($errors->all() as $error)
-                              <li>{{ $error }}</li>
-                          @endforeach
-                      </ul>
-                  </div>
-              @endif
-
             <form action="{{ route('clinicals.store') }}" method="POST">
             {{csrf_field()}}
 
                 <div class="form-group">
                     <label>名前</label>
-                    <input type="text" class="form-control" placeholder="名前" name="name">
+                    <input type="text" class="form-control @if($errors->has('name')) validation_border @endif" placeholder="名前" name="name">
+                    @if ($errors->has('name')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('name') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>年齢</label>
-                    <input type="number" class="form-control" placeholder="29" name="age">歳
+                    <input type="number" class="form-control @if($errors->has('age')) validation_border @endif" placeholder="29" name="age">歳
+                    @if ($errors->has('age')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('age') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
@@ -41,26 +41,66 @@
                     <input class="form-check-input" type="radio" name="sex" id="radio2b" value="女">
                     <label class="form-check-label" for="radio2b">女</label>
                   </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="sex" id="radio2b" value="その他">
+                    <label class="form-check-label" for="radio2b">その他</label>
+                  </div>
+
+                  @if ($errors->has('sex')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('sex') }}</li>
+                        </ul>
+                  @endif
+
                 </div>
 
                 <div class="form-group">
                     <label>電話番号</label>
-                    <input type="tel" class="form-control" placeholder="090-1111-2222" name="tel_num">
+                    <input type="tel" class="form-control @if($errors->has('tel_num')) validation_border @endif" placeholder="090-1111-2222" name="tel_num">
+
+                    @if ($errors->has('tel_num')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('tel_num') }}</li>
+                        </ul>
+                    @endif
+
                 </div>
 
                 <div class="form-group">
                     <label>メール</label>
-                    <input type="email" class="form-control" placeholder="test@gmail.com" name="email">
+                    <input type="email" class="form-control @if($errors->has('email')) validation_border @endif" placeholder="test@gmail.com" name="email">
+
+                    @if ($errors->has('email')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('email') }}</li>
+                        </ul>
+                    @endif
+
                 </div>
 
                 <div class="form-group">
                     <label>郵便番号</label>
-                    <input type="text" class="form-control" placeholder="733-0003" name="postal_num">
+                    <input type="text" class="form-control @if($errors->has('postal_num')) validation_border @endif" placeholder="733-0003" name="postal_num">
+
+                    @if ($errors->has('postal_num')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('postal_num') }}</li>
+                        </ul>
+                    @endif
+
                 </div>
 
                 <div class="form-group">
                     <label>住所</label>
-                    <input type="text" class="form-control" placeholder="広島県呉市" name="address">
+                    <input type="text" class="form-control @if($errors->has('address')) validation_border @endif" placeholder="広島県呉市" name="address">
+
+                    @if ($errors->has('address')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('address') }}</li>
+                        </ul>
+                    @endif
+
                 </div>
 
                 <div class="form-group">
@@ -77,36 +117,73 @@
                     <input class="form-check-input" type="radio" name="parking_lot" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('parking_lot')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('parking_lot') }}</li>
+                        </ul>
+                  @endif
+
                 </div>
                 
                 <div class="form-group">
                     <label>ニーズ</label>
-                    <textarea class="form-control" placeholder="content" rows="5" name="needs"></textarea>
+                    <textarea class="form-control @if($errors->has('needs')) validation_border @endif" placeholder="content" rows="5" name="needs"></textarea>
+                    @if ($errors->has('needs')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('needs') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>既往歴①</label>
-                    <input type="text" class="form-control" placeholder="CVA" name="medical_history_f">
+                    <input type="text" class="form-control @if($errors->has('medical_history_f')) validation_border @endif" placeholder="CVA" name="medical_history_f">
+                    @if ($errors->has('medical_history_f')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('medical_history_f') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>既往歴②</label>
-                    <input type="text" class="form-control" placeholder="MSA" name="medical_history_s">
+                    <input type="text" class="form-control @if($errors->has('medical_history_s')) validation_border @endif" placeholder="MSA" name="medical_history_s">
+                    @if ($errors->has('medical_history_s')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('medical_history_s') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>既往歴③</label>
-                    <input type="text" class="form-control" placeholder="その他" name="medical_history_t">
+                    <input type="text" class="form-control @if($errors->has('medical_history_t')) validation_border @endif" placeholder="その他" name="medical_history_t">
+                    @if ($errors->has('medical_history_t')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('medical_history_t') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>ROM</label>
-                    <input type="text" class="form-control" placeholder="肩関節外転" name="rom">
+                    <input type="text" class="form-control @if($errors->has('needs')) validation_border @endif" placeholder="肩関節外転" name="rom">
+                    @if ($errors->has('rom')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('rom') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
                     <label>仕事</label>
-                    <input type="text" class="form-control" placeholder="プログラマ" name="work">
+                    <input type="text" class="form-control @if($errors->has('work')) validation_border @endif" placeholder="プログラマ" name="work">
+                    @if ($errors->has('work')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('work') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <div class="form-group">
@@ -127,6 +204,11 @@
                     <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+                  @if ($errors->has('adl_basic')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_basic') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
@@ -143,6 +225,12 @@
                     <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('adl_eating')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_eating') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
@@ -159,6 +247,12 @@
                     <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('adl_grooming')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_grooming') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
@@ -175,6 +269,12 @@
                     <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('adl_toilet')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_toilet') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
@@ -191,6 +291,12 @@
                     <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('adl_clothes')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_clothes') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
@@ -207,11 +313,23 @@
                     <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無">
                     <label class="form-check-label" for="radio2b">無</label>
                   </div>
+
+                  @if ($errors->has('adl_bathing')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('adl_bathing') }}</li>
+                        </ul>
+                  @endif
                 </div>
 
                 <div class="form-group">
                     <label>その他</label>
-                    <textarea class="form-control" placeholder="content" rows="5" name="others"></textarea>
+                    <textarea class="form-control @if($errors->has('others')) validation_border @endif" placeholder="content" rows="5" name="others"></textarea>
+
+                    @if ($errors->has('others')) 
+                        <ul class="validation_message" style="color: red;">
+                            <li>{{ $errors->first('others') }}</li>
+                        </ul>
+                    @endif
                 </div>
 
                 <button type="submit" class="btn btn-primary">create</button>

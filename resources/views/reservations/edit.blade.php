@@ -9,19 +9,18 @@
             {{csrf_field()}}
             {{method_field('PATCH')}}
 
-                @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-
                 <div class="form-group">
                     <label>日付</label>
-                    <input type="date" class="form-control" placeholder="" name="reservation_date" value="{{ $reservation->reservation_date}}">
+                    <input type="date" class="form-control @if($errors->any()) validation_border @endif" placeholder="" name="reservation_date" value="{{ $reservation->reservation_date}}">
+
+                            @if ($errors->any()) 
+                                    <ul class="validation_message" style="color: red;">
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                            @endif
+                            
                 </div>
                 <div class="form-group">
                     <label>名前</label>

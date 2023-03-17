@@ -200,22 +200,22 @@
                       <form action="{{ route('kartes.store') }}" method="POST">
                       {{csrf_field()}}
 
-                      @if ($errors->any()) 
-                          <div class="alert alert-danger">
-                              <ul>
-                                  @foreach ($errors->all() as $error)
-                                      <li>{{ $error }}</li>
-                                  @endforeach
-                              </ul>
-                          </div>
-                      @endif
+                          <input type="hidden" name="clinical_id" value="{{ $clinical->id }}">
 
-                      <input type="hidden" name="clinical_id" value="{{ $clinical->id }}">
                           <div class="form-group">
                               <label>カルテ</label>
-                              <textarea class="form-control" 
+                              <textarea class="form-control @if($errors->any()) validation_border @endif" 
                               placeholder="内容" rows="5" name="karte_body"></textarea>
                           </div>
+
+                          @if ($errors->any()) 
+                                  <ul class="validation_message" style="color: red;">
+                                      @foreach ($errors->all() as $error)
+                                          <li>{{ $error }}</li>
+                                      @endforeach
+                                  </ul>
+                          @endif
+
                           <button type="submit" class="btn btn-primary">comment</button>
                       </form>
                   </div>

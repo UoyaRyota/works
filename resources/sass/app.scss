@@ -5,4 +5,15 @@
 @import 'variables';
 
 // Bootstrap
-@import 'bootstrap/scss/bootstrap';
+// @import 'bootstrap/scss/bootstrap';
+
+.validation_message {
+  color: #c20c33;
+}
+
+.validation_border {
+  border-color: #c20c33 ;
+  background-color: #ffd9e1;
+}
+
+
