@@ -47,6 +47,10 @@
                     <label>住所:{{ $clinical->address }}</label>
                 </div>
 
+                <a href="comgooglemaps://?q={{ $clinical->address}}">Hello</a>
+                <iframe src="https://maps.google.com/maps?output=embed&q={{$clinical->address}}&t=m&hl=ja&z=18" width="100%" height="250" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                
+
                 <div class="form-group">
                     <label>駐車場</label>
                 </div>
