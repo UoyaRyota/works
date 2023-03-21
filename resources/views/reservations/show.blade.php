@@ -9,9 +9,15 @@
             <div class="card-body">
                 <p class="card-text">日付：{{ $reservation->reservation_date }}</p>
                 <p>投稿日時：{{ $reservation->created_at }}</p>
-                <a href="{{ route('reservations.edit', $reservation->id) }}" class="btn btn-primary">edit</a>
             </div>
         </div>
+
+        <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+            <a href="{{ route('reservations.edit', $reservation->id) }}" class="btn btn-primary">
+                <button class="btn btn-primary" type="button">編集</button>
+            </a>
+        </div>
+
     </div>
 </div>
 @endsection

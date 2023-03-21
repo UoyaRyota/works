@@ -20,7 +20,7 @@
                                         @endforeach
                                     </ul>
                             @endif
-                            
+
                 </div>
                 <div class="form-group">
                     <label>名前</label>
@@ -31,7 +31,11 @@
                     @endforeach
                     </select>
                 </div>
-                <button type="submit" class="btn btn-primary">update</button>
+
+                <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                        <button class="btn btn-primary submit-type" type="submit">更新</button>
+                </div>
+                
             </form>
         </div>
     </div>

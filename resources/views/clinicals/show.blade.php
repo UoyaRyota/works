@@ -195,8 +195,10 @@
                     <label>その他:{{ $clinical->others }}</label>
                 </div>
 
-                <div class="form-group">
-                  <a href="{{ route('clinicals.edit', $clinical->id) }}" class="btn btn-primary">edit</a>
+                <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                    <a href="{{ route('clinicals.edit', $clinical->id) }}" class="btn btn-primary">
+                        <button class="btn btn-primary" type="button">編集</button>
+                    </a>
                 </div>
 
                 <div class="row justify-content-center">
@@ -220,7 +222,10 @@
                                   </ul>
                           @endif
 
-                          <button type="submit" class="btn btn-primary">comment</button>
+                        <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                          <button class="btn btn-primary submit-type" type="submit">カルテを記入</button>
+                        </div>
+                        
                       </form>
                   </div>
                 </div>
@@ -235,9 +240,13 @@
                               <p class="card-text">内容：{{ $karte->karte_body }}</p>
                           </div>
                       </div>
-                      <div class="form-group">
-                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn-primary">edit</a>
+
+                      <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                          <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn-primary">
+                              <button class="btn btn-primary" type="button">編集</button>
+                          </a>
                       </div>
+                      
                       @endforeach
                   </div>     
                 </div>

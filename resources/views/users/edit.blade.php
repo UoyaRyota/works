@@ -14,7 +14,9 @@
                     <label for="image">画像</label>
                     <input type="file" class="form-control-file" id="image" name="image_path">
             </div>
-            <button type="submit" class="btn btn-primary">update</button>
+            <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                        <button class="btn btn-primary submit-type" type="submit">更新</button>
+                </div>
           </form>
       </div>
     </div>

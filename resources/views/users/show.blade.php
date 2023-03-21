@@ -1,10 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<?php
-print('<pre>');
-var_dump($user);
-print('</pre>');
-?>
 
 <div class="container">
     <div class="row justify-content-center">
@@ -15,12 +10,11 @@ print('</pre>');
             <div class="card-header">
               <img src="{{ $user->image_path }}" alt="画像">
             </div>
-            <div class="form-group">
-                    <label for="image">画像</label>
-                    <input type="file" class="form-control-file" id="image" name="image">
-            </div>
-
-                <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary">edit</a>
+                <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                    <a href="{{route('users.edit', $user->id)}}" class="btn btn-primary">
+                        <button class="btn btn-primary" type="button">編集</button>
+                    </a>
+                </div>
         </div>
     </div>
 </div>

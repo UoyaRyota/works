@@ -112,6 +112,16 @@ footer{
     padding-top: 10px !important;
 }
 
+.btn-primary {
+    color: #fff;
+    background-color: #699BF7;
+    border-color: #699BF7;
+    font-weight: bold;
+}
+
+.submit-type {
+    height: 53px;
+}
 
 
 </style>

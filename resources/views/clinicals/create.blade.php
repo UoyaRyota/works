@@ -331,8 +331,11 @@
                         </ul>
                     @endif
                 </div>
+                
+                <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                        <button class="btn btn-primary submit-type" type="submit">保存</button>
+                </div>
 
-                <button type="submit" class="btn btn-primary">create</button>
             </form>
         </div>
     </div>
