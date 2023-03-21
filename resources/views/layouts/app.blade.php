@@ -123,6 +123,74 @@ footer{
     height: 53px;
 }
 
+.Table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5%;
+  background: #fff;
+  font-size: 16px;
+  box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%);
+  border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  @media screen and (max-width: 768px) {
+  .Table {
+  font-size: 12px;
+  }
+}
+
+.Table-Head{
+
+}
+
+
+.Table-Head-Row {
+    border-bottom: 1px solid #aeaeae;
+    background-color: #4E4E53;
+    color: #fff;
+
+}
+
+.Table-Head-Row-Cell {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-weight: 200;
+  font-size: 14px;
+}
+
+.Table-Head-Row-Cell.table-left{
+    border-top-left-radius: 10px;
+}
+
+.Table-Head-Row-Cell.table-right{
+    border-top-right-radius: 10px;
+}
+
+.Table-Head-Row-Cell.table-right-left{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+  a.widelink { 
+    display: block;
+    text-decoration: none;
+  }
+
+  .Table-Body-Row :first-child {
+    color: black;
+  }
+
+  .Table-Body-Row-Cell {
+  padding-top: 0.75em;
+  padding-bottom: 0.75em;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  font-size: 14px;
+  color: #393d3d;
+  }
+
 
 </style>
 <body>

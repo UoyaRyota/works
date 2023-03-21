@@ -4,21 +4,33 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card text-center">
-                <div class="card-header">
-                    list
-                </div>
+
+        <div class="my-3"><h3 class="font-weight-bold">お客様一覧</h3></div>
+            
+            <table class="Table">
+
+                <thead class="Table-Head">
+                    <tr class="Table-Head-Row">
+                        <th class="Table-Head-Row-Cell table-right-left">名前</th>
+                    </tr>
+                </thead>
+
+                <tbody class="Table-Body">
+
                 @foreach ($clinicals as $clinical)
-                <div class="card-body">
-                    <h5 class="card-title">名前：{{ $clinical->name }}</h5>
-                    <p class="card-text">年齢：{{ $clinical->age }}歳</p>
-                    <a href="{{ route('clinicals.show', $clinical->id) }}" class="btn btn-primary">detail</a>
-                </div>
-                <div class="card-footer text-muted">
-                    投稿日時：{{ $clinical->created_at }}
-                </div>
+                    <tr class="Table-Body-Row">
+                        <a href="{{ route('clinicals.show', $clinical->id) }}">
+                            <td class="Table-Body-Row-Cell">
+                                <a href="{{ route('clinicals.show', $clinical->id) }}" class="widelink">{{ $clinical->name }}</a>
+                            </td>
+                        </a>
+                    </tr>
                 @endforeach
-            </div>
+
+                </tbody>
+
+            </table>
+        </div>
         </div>
 
         <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
