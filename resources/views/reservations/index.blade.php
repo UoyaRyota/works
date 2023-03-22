@@ -32,8 +32,6 @@
             </table>
         </div>
 
-
-
         <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
             <a href="{{ route('reservations.create') }}" class="btn btn-primary">
                 <button class="btn btn-primary" type="button">新規作成</button>

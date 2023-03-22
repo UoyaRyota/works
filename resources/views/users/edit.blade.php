@@ -1,5 +1,6 @@
 @extends('layouts.app')
 @section('content')
+<!-- htmlタグ,labelとinputの役割について調べる -->
 <style>
   #img {
   display: block;
