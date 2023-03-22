@@ -139,11 +139,6 @@ footer{
   }
 }
 
-.Table-Head{
-
-}
-
-
 .Table-Head-Row {
     border-bottom: 1px solid #aeaeae;
     background-color: #4E4E53;
@@ -190,6 +185,63 @@ footer{
   font-size: 14px;
   color: #393d3d;
   }
+
+.basic {
+    padding-right: calc(var(--bs-gutter-x) * 1);
+    padding-left: calc(var(--bs-gutter-x) * 1);
+
+}
+.form-group{
+    margin: 10px 0;
+}
+.form-control{
+    border-radius: 1.5rem;
+    margin-top: 5px;
+}
+
+.input_age{
+    width: 15%;
+}
+
+.input_tel{
+    width: 50%;
+}
+
+.user-main {
+    /* box-shadow: 0 2.5rem 2rem -2rem hsl(200deg 50% 20% / 40%); */
+    /* box-shadow: 7px 10px 5px #cccccc; */
+    filter: drop-shadow(5px 5px 5px rgba(0,0,0,0.3));
+    border-radius: 5%;
+    padding: 50px ;
+    margin: 30px 20px;
+}
+div.user-image{
+
+    margin: 0 auto;
+}
+div.user-image>img{
+    display: block;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    background-position: 54% 36%;
+}
+
+.deco-file label{
+    display: inline-block;
+    border: 2px solid #1E88E5;
+    color: #1E88E5;
+    text-align: center;
+    padding: 20px 40px;
+}
+.deco-file label:hover{
+    cursor: pointer;
+}
+.deco-file input[type="file"]{
+    display: none;
+}
+
 
 
 </style>

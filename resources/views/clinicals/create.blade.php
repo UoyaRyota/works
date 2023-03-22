@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-md-8 basic">
 
             <form action="{{ route('clinicals.store') }}" method="POST">
             {{csrf_field()}}
@@ -20,12 +20,15 @@
 
                 <div class="form-group">
                     <label>年齢</label>
-                    <input type="number" class="form-control @if($errors->has('age')) validation_border @endif" placeholder="29" name="age">歳
+                    <div style="display: flex;">
+                    <input type="number" class="form-control @if($errors->has('age')) validation_border @endif input_age" placeholder="29" name="age"> <span style="display: block; padding:15px;">歳</span> 
+                    </div>
                     @if ($errors->has('age')) 
                         <ul class="validation_message" style="color: red;">
                             <li>{{ $errors->first('age') }}</li>
                         </ul>
                     @endif
+
                 </div>
 
                 <div class="form-group">
@@ -57,7 +60,7 @@
 
                 <div class="form-group">
                     <label>電話番号</label>
-                    <input type="tel" class="form-control @if($errors->has('tel_num')) validation_border @endif" placeholder="090-1111-2222" name="tel_num">
+                    <input type="tel" class="form-control @if($errors->has('tel_num')) validation_border @endif input_tel" placeholder="090-1111-2222" name="tel_num">
 
                     @if ($errors->has('tel_num')) 
                         <ul class="validation_message" style="color: red;">
@@ -81,7 +84,7 @@
 
                 <div class="form-group">
                     <label>郵便番号</label>
-                    <input type="text" class="form-control @if($errors->has('postal_num')) validation_border @endif" placeholder="733-0003" name="postal_num" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
+                    <input type="text" class="form-control @if($errors->has('postal_num')) validation_border @endif input_tel" placeholder="733-0003" name="postal_num" size="10" maxlength="8" onKeyUp="AjaxZip3.zip2addr(this,'','address','address');">
 
                     @if ($errors->has('postal_num')) 
                         <ul class="validation_message" style="color: red;">
@@ -186,140 +189,142 @@
                     @endif
                 </div>
 
-                <div class="form-group">
+                <div class="form-group px-2">
                     <label>ADL</label>
+
+                    <div class="form-group">
+                        <label>基本動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+                    @if ($errors->has('adl_basic')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_basic') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>食事動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+
+                    @if ($errors->has('adl_eating')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_eating') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>整容動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+
+                    @if ($errors->has('adl_grooming')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_grooming') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>トイレ動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+
+                    @if ($errors->has('adl_toilet')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_toilet') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>衣服動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+
+                    @if ($errors->has('adl_clothes')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_clothes') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
+                    <div class="form-group">
+                        <label>入浴動作</label>
+                    </div>
+
+                    <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有">
+                        <label class="form-check-label" for="radio2a">有</label>
+                    </div>
+                    
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無">
+                        <label class="form-check-label" for="radio2b">無</label>
+                    </div>
+
+                    @if ($errors->has('adl_bathing')) 
+                            <ul class="validation_message" style="color: red;">
+                                <li>{{ $errors->first('adl_bathing') }}</li>
+                            </ul>
+                    @endif
+                    </div>
+
                 </div>
 
-                <div class="form-group">
-                    <label>基本動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-                  @if ($errors->has('adl_basic')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_basic') }}</li>
-                        </ul>
-                  @endif
-                </div>
-
-                <div class="form-group">
-                    <label>食事動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-
-                  @if ($errors->has('adl_eating')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_eating') }}</li>
-                        </ul>
-                  @endif
-                </div>
-
-                <div class="form-group">
-                    <label>整容動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-
-                  @if ($errors->has('adl_grooming')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_grooming') }}</li>
-                        </ul>
-                  @endif
-                </div>
-
-                <div class="form-group">
-                    <label>トイレ動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-
-                  @if ($errors->has('adl_toilet')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_toilet') }}</li>
-                        </ul>
-                  @endif
-                </div>
-
-                <div class="form-group">
-                    <label>衣服動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-
-                  @if ($errors->has('adl_clothes')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_clothes') }}</li>
-                        </ul>
-                  @endif
-                </div>
-
-                <div class="form-group">
-                    <label>入浴動作</label>
-                </div>
-
-                <div class="form-group">
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有">
-                    <label class="form-check-label" for="radio2a">有</label>
-                  </div>
-                  
-                  <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無">
-                    <label class="form-check-label" for="radio2b">無</label>
-                  </div>
-
-                  @if ($errors->has('adl_bathing')) 
-                        <ul class="validation_message" style="color: red;">
-                            <li>{{ $errors->first('adl_bathing') }}</li>
-                        </ul>
-                  @endif
-                </div>
 
                 <div class="form-group">
                     <label>その他</label>
