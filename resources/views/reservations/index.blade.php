@@ -2,12 +2,13 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-10">
         <div class="my-3"><h3 class="font-weight-bold">予約一覧</h3></div>
         <table class="Table">
                 <thead class="Table-Head">
                     <tr class="Table-Head-Row">
                         <th class="Table-Head-Row-Cell table-left">日付</th>
+                        <th class="Table-Head-Row-Cell">時間</th>
                         <th class="Table-Head-Row-Cell table-right">名前</th>
                     </tr>
                 </thead>
@@ -19,6 +20,10 @@
 
                             <td class="Table-Body-Row-Cell">
                                 <a href="{{ route('reservations.show', $reservation->id) }}" class="widelink">{{ $reservation->reservation_date }}</a>
+                            </td>
+
+                            <td class="Table-Body-Row-Cell">
+                                <a href="{{ route('reservations.show', $reservation->id) }}" class="widelink">{{ $reservation->reservation_time }}</a>
                             </td>
 
                             <td class="Table-Body-Row-Cell">

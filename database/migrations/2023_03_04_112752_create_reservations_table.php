@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             // $table->unsignedBigInteger('user_id');
             $table->string('reservation_date');
+            $table->string('reservation_time');
             $table->string('user_name');
             // $table->foreign('user_id')->references('id')->on('users');
         });

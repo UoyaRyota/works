@@ -2,13 +2,12 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card-header">
-                <h5>名前：{{ $reservation->user_name }}</h5>
-            </div>
+        <div class="col-10 basic shadow-sm rounded">
+        <div class="my-3"><h3 class="font-weight-bold">予約詳細画面</h3></div>
             <div class="card-body">
+                <p>名前：{{ $reservation->user_name }}</p>
                 <p class="card-text">日付：{{ $reservation->reservation_date }}</p>
-                <p>投稿日時：{{ $reservation->created_at }}</p>
+                <p>日時：{{ $reservation->reservation_time }}</p>
             </div>
         </div>
 

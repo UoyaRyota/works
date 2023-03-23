@@ -242,6 +242,16 @@ div.user-image>img{
     display: none;
 }
 
+.input_date {
+    width: 70%;
+}
+
+.form-select {
+    border-radius: 1.5rem;
+    margin-top: 5px;
+    width: 30%;
+}
+
 
 
 </style>
