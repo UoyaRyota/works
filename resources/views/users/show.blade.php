@@ -8,7 +8,7 @@
 
             @if($user->image_path == '')
             <div class="user_image">
-                <img src="/Applications/MAMP/htdocs/works/resources/no-image.png" alt="画像">
+                <img src="resources/img/no-image.png" alt="画像">
             </div>
             @else
             <div class="user_image">

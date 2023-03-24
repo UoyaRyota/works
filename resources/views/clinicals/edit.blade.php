@@ -105,14 +105,14 @@
 
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="parking_lot" id="radio2a" value="有" @if
-                            (old('parking_lot', $clinical->parking_lot) == '有') checked @endif>
+                        <input class="form-check-input" type="radio" name="parking_lot" id="radio2a" value="有"
+                        @if(old('parking_lot', $clinical->parking_lot) == '有') checked @endif>
                         <label class="form-check-label" for="radio2a">有</label>
                     </div>
 
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="parking_lot" id="radio2b" value="無" @if
-                            (old('parking_lot', $clinical->parking_lot) == '無') checked @endif>
+                        <input class="form-check-input" type="radio" name="parking_lot" id="radio2b" value="無"
+                        @if(old('parking_lot', $clinical->parking_lot) == '無') checked @endif>
                         <label class="form-check-label" for="radio2b">無</label>
                     </div>
                 </div>
@@ -194,14 +194,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有" @if
-                                (old('adl_basic', $clinical->adl_basic) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_basic" id="radio2a" value="有"
+                            @if(old('adl_basic', $clinical->adl_basic) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無" @if
-                                (old('adl_basic', $clinical->adl_basic) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_basic" id="radio2b" value="無"
+                            @if(old('adl_basic', $clinical->adl_basic) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>
@@ -212,14 +212,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有" @if
-                                (old('adl_eating', $clinical->adl_eating) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_eating" id="radio2a" value="有"
+                            @if(old('adl_eating', $clinical->adl_eating) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無" @if
-                                (old('adl_eating', $clinical->adl_eating) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_eating" id="radio2b" value="無"
+                            @if(old('adl_eating', $clinical->adl_eating) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>
@@ -230,14 +230,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有" @if
-                                (old('adl_grooming', $clinical->adl_grooming) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_grooming" id="radio2a" value="有"
+                            @if(old('adl_grooming', $clinical->adl_grooming) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無" @if
-                                (old('adl_grooming', $clinical->adl_grooming) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_grooming" id="radio2b" value="無"
+                            @if(old('adl_grooming', $clinical->adl_grooming) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>
@@ -248,14 +248,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有" @if
-                                (old('adl_toilet', $clinical->adl_toilet) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_toilet" id="radio2a" value="有"
+                            @if(old('adl_toilet', $clinical->adl_toilet) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無" @if
-                                (old('adl_toilet', $clinical->adl_toilet) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_toilet" id="radio2b" value="無"
+                            @if(old('adl_toilet', $clinical->adl_toilet) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>
@@ -266,14 +266,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有" @if
-                                (old('adl_clothes', $clinical->adl_clothes) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_clothes" id="radio2a" value="有"
+                            @if(old('adl_clothes', $clinical->adl_clothes) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無" @if
-                                (old('adl_clothes', $clinical->adl_clothes) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_clothes" id="radio2b" value="無"
+                            @if(old('adl_clothes', $clinical->adl_clothes) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>
@@ -284,14 +284,14 @@
 
                     <div class="form-group">
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有" @if
-                                (old('adl_bathing', $clinical->adl_bathing) == '有') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_bathing" id="radio2a" value="有"
+                            @if(old('adl_bathing', $clinical->adl_bathing) == '有') checked @endif>
                             <label class="form-check-label" for="radio2a">有</label>
                         </div>
 
                         <div class="form-check form-check-inline">
-                            <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無" @if
-                                (old('adl_bathing', $clinical->adl_bathing) == '無') checked @endif>
+                            <input class="form-check-input" type="radio" name="adl_bathing" id="radio2b" value="無"
+                            @if(old('adl_bathing', $clinical->adl_bathing) == '無') checked @endif>
                             <label class="form-check-label" for="radio2b">無</label>
                         </div>
                     </div>

@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('kartes', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('clinical_id');

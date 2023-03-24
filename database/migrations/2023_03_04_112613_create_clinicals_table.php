@@ -14,30 +14,30 @@ return new class extends Migration
     public function up()
     {
         Schema::create('clinicals', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->timestamps();
             $table->unsignedBigInteger('user_id');
             $table->string('name');
             $table->integer('age');
-            $table->string('sex');
-            $table->string('tel_num');
-            $table->string('email');
+            $table->string('sex',10);
+            $table->string('tel_num',13);
+            $table->string('email',30);
             $table->integer('postal_num');
-            $table->string('address');
-            $table->string('parking_lot');
-            $table->text('needs');
-            $table->string('medical_history_f');
-            $table->string('medical_history_s');
-            $table->string('medical_history_t');
-            $table->string('rom');
-            $table->string('work');
-            $table->string('adl_basic');
-            $table->string('adl_eating');
-            $table->string('adl_grooming');
-            $table->string('adl_toilet');
-            $table->string('adl_clothes');
-            $table->string('adl_bathing');
-            $table->text('others');
+            $table->string('address',100);
+            $table->string('parking_lot',10);
+            $table->mediumText('needs');
+            $table->string('medical_history_f',50);
+            $table->string('medical_history_s',50);
+            $table->string('medical_history_t',50);
+            $table->mediumText('rom');
+            $table->string('work',100);
+            $table->string('adl_basic',10);
+            $table->string('adl_eating',10);
+            $table->string('adl_grooming',10);
+            $table->string('adl_toilet',10);
+            $table->string('adl_clothes',10);
+            $table->string('adl_bathing',10);
+            $table->mediumText('others');
             $table->foreign('user_id')->references('id')->on('users');
         });
     }

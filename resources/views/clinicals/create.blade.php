@@ -356,11 +356,12 @@
                         <li>{{ $errors->first('others') }}</li>
                     </ul>
                     @endif
-                </div>
-
-                <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
+                </div>   
+               
+                <x-button.create> ... </x-button.create>
+                <!-- <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
                     <button class="btn btn_primary submit_type" type="submit">保存</button>
-                </div>
+                </div> -->
 
             </form>
         </div>
