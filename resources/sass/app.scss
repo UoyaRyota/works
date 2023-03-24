@@ -8,43 +8,259 @@
 // @import 'bootstrap/scss/bootstrap';
 // @import '~@fortawesome/fontawesome-free/scss/brands';
 
-.validation_message {
-  color: #c20c33;
-}
+// Reference Site
+// https://next-code.jp/blog/tech/php/laravel/laravel9%E3%80%80vite%E3%81%A7scss%E3%82%92%E4%BD%BF%E3%81%86%E6%96%B9%E6%B3%95/
 
-.validation_border {
-  border-color: #c20c33 ;
-  background-color: #ffd9e1;
-}
+$base_color:#699BF7;
 
-.search-form-009 {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
+/*basic area*/
+header {
+  height: 50px;
 }
-
-.search-form-009:hover {
-  box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+footer {
+  height: 100px;
+  opacity: 1;
 }
-
-.search-form-009::before {
-  width: 45px;
-  height: 15px;
-  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%239aa0a6%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
-  background-position: center;
-  background-repeat: no-repeat;
-  content: '';
+.btn_primary {
+  color: #fff;
+  background-color: $base_color;
+  border-color: $base_color;
+  font-weight: bold;
 }
-
-.search-form-009 input {
-  width: 250px;
+.submit_type {
+  height: 53px;
+}
+.input_age {
+  width: 15%;
+}
+.input_tel {
+  width: 50%;
+}
+.input_date {
+  width: 70%;
+}
+.form_select {
+  border-radius: 1.5rem;
+  margin-top: 5px;
+  width: 30%;
   height: 40px;
-  padding: 5px 25px 5px 0;
-  border: none;
-  box-sizing: border-box;
-  outline: none;
+  padding-left: 10px;
 }
 
 
+/*bootstrap*/
+.form-group {
+  margin: 10px 0;
+}
+.form-control {
+  border-radius: 1.5rem;
+  margin-top: 5px;
+}
+
+// register ares
+div {
+  .works_text {
+    color:$base_color;
+  }
+  .works_content {
+    font-size: 10px;
+  }
+}
+
+
+
+/*validation area*/
+ul {
+  li{
+    &.validation_message {
+      color: #c20c33;
+    }
+  }
+}
+.validation_border {
+    border-color: #c20c33 ;
+    background-color: #ffd9e1;
+}
+
+
+/*search area*/
+form {
+  &.search_form {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    margin: 20px;
+    &:before{
+      width: 45px;
+      height: 15px;
+      background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%239aa0a6%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+      background-position: center;
+      background-repeat: no-repeat;
+      content: '';
+    }
+    input {
+      width: 250px;
+      height: 40px;
+      padding: 5px 25px 5px 0;
+      border: none;
+      box-sizing: border-box;
+      outline: none;
+    }
+  }
+}
+
+
+/*footer menu*/
+#sp_fixed_menu {
+  position: sticky;
+  width: 100%;
+  bottom: 0px;
+  font-size: 0;
+  opacity: 1;
+  z-index: 999 !important;
+  background: #fff;
+  ul {
+    border-top: 1px solid #DBDBDB;
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      padding: 0;
+      margin: 0;
+      font-size: 14px;
+      border-right: 1px solid #fff;
+      a{
+        color: black;
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 20px;
+        i{
+          &.footer_icon_color{
+            color: $base_color;
+          }
+        }
+      }
+      &.create_button {
+        a{
+          padding-top: 10px !important;
+        }
+      }
+    }
+  }
+}
+
+
+/*table area*/
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 5%;
+  background: #fff;
+  font-size: 16px;
+  box-shadow: 0 2.5rem 2rem -2rem hsl(200 50% 20% / 40%);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  tr.table_head_row {
+    border-bottom: 1px solid #aeaeae;
+    background-color: #4E4E53;
+    color: #fff;
+    th{
+      &.table_head_row_cell {
+        padding-top: 0.75em;
+        padding-bottom: 0.75em;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        font-weight: 200;
+        font-size: 14px;
+      }
+      &.table_left {
+        border-top-left-radius: 10px;
+      }
+      &.table_right {
+        border-top-right-radius: 10px;
+      }
+      &.table_right_left {
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+    }
+  }
+  tr.table_body_row :first-child {
+    color: black;
+    &.table_body_row_cell {
+      padding-top: 0.75em;
+      padding-bottom: 0.75em;
+      padding-left: 0.5em;
+      padding-right: 0.5em;
+      font-size: 14px;
+      color: #393d3d;
+    }
+  }
+}
+
+a.widelink {
+  display: block;
+  text-decoration: none;
+}
+
+
+/*user img*/
+div {
+  &.user-main {
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
+    border-radius: 5%;
+    padding: 50px;
+    margin: 30px 20px;
+  }
+  div.user_image{
+    margin: 0 auto;
+    img {
+      display: block;
+      border-radius: 50%;
+      width: 100px;
+      height: 100px;
+      margin: 0 auto;
+      background-position: 54% 36%;
+    }
+  }
+}
+.image_area {
+  position: relative;
+  img#img {
+    display: block;
+    width: 200px;
+    height: 200px;
+    object-fit: scale-down;
+    background-color: #ddd;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+  }
+  label.filelabel{
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.5s;
+
+    input.image_path {
+      visibility: hidden;
+    }
+  }
+}
+.image_area .image_path,
+.filelabel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  color: #fff;
+}
