@@ -3,11 +3,9 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-10">
+        <div class="col-10 mt-5">
 
-            <div class="my-3">
-                <h3 class="font-weight-bold">予約一覧</h3>
-            </div>
+            <x-test title="予約一覧" />
 
             <table class="table">
 

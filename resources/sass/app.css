@@ -74,7 +74,7 @@ form.search_form {
   overflow: hidden;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
 }
 form.search_form:before {
   width: 45px;
@@ -95,7 +95,7 @@ form.search_form input {
 
 /*footer menu*/
 #sp_fixed_menu {
-  position: sticky;
+  position: fixed;
   width: 100%;
   bottom: 0px;
   font-size: 0;

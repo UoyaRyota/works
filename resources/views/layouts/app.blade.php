@@ -32,6 +32,7 @@
 
 <body>
     <div id="app">
+        <div class="position-fixed w-100 bg-white">
         @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
         <form method="POST" action="{{route('clinicals.search')}}" class="search_form">
             {{csrf_field()}}
@@ -42,6 +43,8 @@
         </form>
         @else
         @endif
+        </div>
+
 
         <main class="py-4">
             @yield('content')

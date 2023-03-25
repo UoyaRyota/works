@@ -4,7 +4,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10 shadow-sm rounded">
-        <div class="my-3"><h3 class="font-weight-bold">予約詳細画面</h3></div>
             <div class="card-body">
                 <p>名前：{{ $reservation->user_name }}</p>
                 <p class="card-text">日付：{{ $reservation->reservation_date }}</p>

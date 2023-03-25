@@ -3,11 +3,9 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-md-8">
+        <div class="col-10 mt-5">
 
-            <div class="my-3">
-                <h3 class="font-weight-bold">お客様一覧</h3>
-            </div>
+            <x-test title="お客様一覧" />
 
             <table class="table">
 
@@ -41,6 +39,8 @@
             <button class="btn btn_primary" type="button">新規作成</button>
         </a>
     </div>
+
+    <x-table pageLink="clinicals" buttonTitle="新規作成"/>
 
 </div>
 </div>
