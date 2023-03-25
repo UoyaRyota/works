@@ -1,4 +1,5 @@
 @extends('layouts.app')
+<x-search />
 @section('content')
 
 <div class="container">

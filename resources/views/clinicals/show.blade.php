@@ -235,7 +235,7 @@
                             @endforeach
                         </ul>
                         @endif
-                        
+
                         <x-button.create> ... </x-button.create>
                         <!-- <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
                             <button class="btn btn_primary submit_type" type="submit">カルテを記入</button>
@@ -246,18 +246,18 @@
             </div>
             <div class="row justify-content-center">
 
-                <div class="col-md-8">
+                <div class="col-12">
                     @foreach ($clinical->kartes as $karte)
-                    <div class="card mt-3">
-                        <h5 class="card-header">投稿者：{{ $clinical->user->name }}</h5>
-                        <div class="card-body">
-                            <h5 class="card-title">投稿日時：{{ $karte->created_at }}</h5>
+                    <div class="mt-3">
+                        <p class="">投稿者：{{ $clinical->user->name }}</p>
+                        <div class="">
+                            <p class="card-title">投稿日時：{{ $karte->created_at }}</p>
                             <p class="card-text">内容：{{ $karte->karte_body }}</p>
                         </div>
                     </div>
 
                     <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn-primary">
+                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn_primary">
                             <button class="btn btn_primary" type="button">編集</button>
                         </a>
                     </div>
