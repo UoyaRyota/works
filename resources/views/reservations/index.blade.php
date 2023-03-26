@@ -1,5 +1,17 @@
 @extends('layouts.app')
-<x-search />
+        <div class="position-fixed w-100 bg-white">
+        @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
+        <form method="POST" action="{{route('reservations.search')}}" class="search_form">
+            {{csrf_field()}}
+            <label>
+                <input type="search" class="" name="search" value="" placeholder="search" aria-label="検索...">
+
+            </label>
+        </form>
+        @else
+        @endif
+        </div>
+
 @section('content')
 
 <div class="container">

@@ -23,6 +23,6 @@ class create extends Component
      */
     public function render()
     {
-        return view('components.button.create');
+        return view('component.button.create');
     }
 }

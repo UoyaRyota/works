@@ -13,7 +13,7 @@ class Test extends Component
      */
 
     public $title;
-    
+
     public function __construct($title)
     {
         $this->title = $title;
@@ -27,6 +27,6 @@ class Test extends Component
      */
     public function render()
     {
-        return view('components.test');
+        return view('component.test');
     }
 }

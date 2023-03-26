@@ -23,6 +23,6 @@ class Table extends Component
      */
     public function render()
     {
-        return view('components.table');
+        return view('component.table');
     }
 }

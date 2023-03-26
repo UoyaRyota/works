@@ -85,7 +85,7 @@ form.search_form:before {
   content: "";
 }
 form.search_form input {
-  width: 250px;
+  width: 150%;
   height: 40px;
   padding: 5px 25px 5px 0;
   border: none;

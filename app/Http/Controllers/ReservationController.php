@@ -100,4 +100,11 @@ class ReservationController extends Controller
     {
         //
     }
+
+    public function search(Request $request) {
+        $reservations = Reservation::where('user_name', 'like', "%{$request->search}%")->paginate(5);
+
+        return view('reservations.index', compact('reservations'));
+
+    }
 }
