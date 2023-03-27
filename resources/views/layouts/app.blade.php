@@ -31,7 +31,10 @@
 </head>
 
 <body>
+
+
     <div id="app">
+
         <!-- <div class="position-fixed w-100 bg-white">
         @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
         <form method="POST" action="{{route('clinicals.search')}}" class="search_form">
@@ -53,34 +56,31 @@
 
     <div id="sp_fixed_menu" class="for-sp">
         <ul>
-            <li><a href=""><i class="fa-solid fa-house fa-2x footer_icon_color"></i></a></li>
-            <li><a href="{{route('clinicals.index')}}"><i
-                        class="fa-solid fa-magnifying-glass fa-2x footer_icon_color"></i></a></li>
-            <li class="create_button"><a href="{{route('clinicals.index')}}"><i
-                        class="fa-solid fa-circle-plus fa-3x footer_icon_color"></i></i></a></li>
-            <li><a href="{{route('reservations.index')}}"><i
-                        class="fa-regular fa-clipboard fa-2x footer_icon_color"></i></a></li>
-            <li><a href="{{route('reservations.index')}}"><i class="fa-solid fa-list fa-2x footer_icon_color"></i></a>
+            <li>
+                <a href="{{route('clinicals.index')}}">
+                    <i class="fa-solid fa-user fa-2x footer_icon_color">
+                    </i>
+                </a>
+            </li>
+
+            <li class="create_button">
+                <a href="
+                @if(request()->is('*clinicals*')){{route('clinicals.create')}} 
+                @elseif(request()->is('*reservations*')){{route('reservations.create')}}
+                @endif">
+                    <i class="fa-solid fa-circle-plus fa-3x footer_icon_color">
+                    </i>
+                </a>
+            </li>
+
+            <li>
+                <a href="{{route('reservations.index')}}">
+                    <i class="fa-regular fa-clipboard fa-2x footer_icon_color">
+                    </i>
+                </a>
             </li>
         </ul>
     </div>
 
-    
-                <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                        </li>
-                                    
-    
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                        </li>
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                               onclick="event.preventDefault();
-                                                             document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
 </body>
 </html>

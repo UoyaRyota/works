@@ -58,8 +58,8 @@
 
         </div>
 
-        <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-            <a href="{{ route('reservations.create') }}" class="btn btn_primary">
+        <div class="d-grid gap-2 col-8 mx-auto my-5 ">
+            <a href="{{ route('reservations.create') }}" class="btn btn_primary mb-5">
                 <button class="btn btn_primary" type="button">新規作成</button>
             </a>
         </div>

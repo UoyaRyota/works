@@ -1,6 +1,54 @@
 @extends('layouts.app')
+<style>
+    .user-login-icon{
+        background-color: black;
+    width: 40px;
+    height: 40px;
+    margin-left: 0px;
+    margin-top: 18px;
+}
+.user-icon-img{
+  border-radius: 50%;
+  position: relative;
+}
+img.user-icon-img-pic {
+  position: absolute;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+</style>
+<div class="position-fixed w-100 bg-white d-flex">
+        @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
+        <form method="POST" action="{{route('reservations.search')}}" class="search_form">
+            {{csrf_field()}}
+            <label>
+                <input type="search" class="" name="search" value="" placeholder="search" aria-label="検索...">
 
+            </label>
+        </form>
+        @else
+        @endif
+        <?php $user = Auth::user();?>
+
+
+
+        <div class="user_test">
+            <div class="user-login-icon user-icon-img">     
+                <a href="{{ route('users.show',$user->id) }}">
+                @if($user->image_path == '')
+                    <img class="user-icon-img-pic" src="{{ asset('no-image.png') }}" alt="">
+                @else
+                    <img class="user-icon-img-pic" src="{{ $user->image_path }}" alt="">
+                @endif
+            </a>
+        </div>
+
+    </div>
+        </div>
 @section('content')
+
 
 <div class="container">
     <div class="row justify-content-center">
@@ -35,8 +83,8 @@
         </div>
     </div>
 
-    <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-        <a href="{{ route('clinicals.create') }}" class="btn btn_primary">
+    <div class="d-grid gap-2 col-8 mx-auto my-5 ">
+        <a href="{{ route('clinicals.create') }}" class="btn btn_primary mb-5">
             <button class="btn btn_primary" type="button">新規作成</button>
         </a>
     </div>

@@ -236,10 +236,9 @@
                         </ul>
                         @endif
 
-                        <x-button.create> ... </x-button.create>
-                        <!-- <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                            <button class="btn btn_primary submit_type" type="submit">カルテを記入</button>
-                        </div> -->
+                        <div class="d-grid gap-2 col-8 mx-auto my-5 ">
+                            <button class="btn btn_primary submit_type mb-5" type="submit">カルテを記入</button>
+                        </div>
 
                     </form>
                 </div>
@@ -256,8 +255,8 @@
                         </div>
                     </div>
 
-                    <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn_primary">
+                    <div class="d-grid gap-2 col-8 mx-auto my-5 ">
+                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn_primary mb-5">
                             <button class="btn btn_primary" type="button">編集</button>
                         </a>
                     </div>

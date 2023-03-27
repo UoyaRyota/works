@@ -92,6 +92,8 @@ form {
     border: 1px solid #dfe1e5;
     border-radius: 24px;
     margin: 20px 20px 0px 20px;
+    height: 40px;
+    width: 320px;
     &:before{
       width: 45px;
       height: 15px;
@@ -101,7 +103,7 @@ form {
       content: '';
     }
     input {
-      width: 150%;
+      width: 140%;
       height: 40px;
       padding: 5px 25px 5px 0;
       border: none;
