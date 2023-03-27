@@ -236,4 +236,24 @@ div div.user_image img {
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+}
+
+div.user_login_icon {
+  background-color: black;
+  width: 40px;
+  height: 40px;
+  margin-left: 0px;
+  margin-top: 18px;
+}
+div.user_icon_img {
+  border-radius: 50%;
+  position: relative;
+}
+div img.user_icon_img_pic {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
 }/*# sourceMappingURL=app.css.map */

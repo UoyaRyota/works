@@ -266,3 +266,28 @@ div {
   transform: translate(-50%, -50%);
   color: #fff;
 }
+
+// user img area
+div{
+  &.user_login_icon{
+      background-color: black;
+      width: 40px;
+      height: 40px;
+      margin-left: 0px;
+      margin-top: 18px;
+  }
+  &.user_icon_img{
+      border-radius: 50%;
+      position: relative;
+  }
+  img {
+      &.user_icon_img_pic {
+          position: absolute;
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+      }
+  }
+
+}
