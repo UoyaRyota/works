@@ -23,6 +23,7 @@
                 @else
                     <img class="user_icon_img_pic" src="{{ $user->image_path }}" alt="">
                 @endif
+
             </a>
         </div>
 

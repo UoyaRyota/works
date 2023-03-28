@@ -214,7 +214,7 @@
                     <button class="btn btn_primary" type="button">編集</button>
                 </a>
             </div>
-
+            
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form action="{{ route('kartes.store') }}" method="POST">
@@ -243,25 +243,45 @@
                     </form>
                 </div>
             </div>
+
             <div class="row justify-content-center">
 
-                <div class="col-12">
-                    @foreach ($clinical->kartes as $karte)
-                    <div class="mt-3">
+                <div class="col-12 mb-5">
+                    <table class="table">
+                      <thead class="table_head">
+                          <tr class="table_head_row">
+                              <th class="table_head_row_cell table_right_left">日付</th>
+                          </tr>
+                      </thead>
+
+                      <tbody class="table_body">
+                          @foreach ($clinical->kartes as $karte)
+                          <tr class="table_body_row">
+                              <a href="{{ route('kartes.edit',$karte->id) }}">
+                                  <td class="table_body_row_cell">
+                                      <a href="{{ route('kartes.edit', $karte->id) }}"
+                                          class="widelink">{{ $karte->created_at }}</a>
+                                  </td>
+                              </a>
+                          </tr>
+                          @endforeach
+                      </tbody>
+                      </table>
+
+                    <!-- <div class="mt-3">
                         <p class="">投稿者：{{ $clinical->user->name }}</p>
                         <div class="">
                             <p class="card-title">投稿日時：{{ $karte->created_at }}</p>
                             <p class="card-text">内容：{{ $karte->karte_body }}</p>
                         </div>
-                    </div>
-
+                    </div> -->
+<!-- 
                     <div class="d-grid gap-2 col-8 mx-auto my-5 ">
                         <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn_primary mb-5">
                             <button class="btn btn_primary" type="button">編集</button>
                         </a>
-                    </div>
+                    </div> -->
 
-                    @endforeach
                 </div>
             </div>
 

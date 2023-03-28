@@ -26,9 +26,8 @@ Auth::routes();
 // REST設計に変更する必要あり
 Route::resource('clinicals', ClinicalController::class);
 Route::resource('kartes', KarteController::class);
+Route::get('{id}kartes', KarteController::class);
 Route::resource('reservations', ReservationController::class);
-
-Route::get('/', function () { return redirect (app()->getLocale()); });
 Route::resource('users', UserController::class);
 
 Route::post('/clinicals/search',
