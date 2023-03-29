@@ -12,11 +12,11 @@ class Search extends Component
      * @return void
      */
 
-    public $searchRoute;
+    public $searchRes;
 
-    public function __construct($searchRout)
+    public function __construct($searchRes)
     {
-        $this->searchRout =$searchRout;
+        $this->searchRes = $searchRes;
     }
 
     /**

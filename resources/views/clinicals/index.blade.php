@@ -1,34 +1,10 @@
 @extends('layouts.app')
 
 <div class="position-fixed w-100 bg-white d-flex">
-        @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
-        <form method="POST" action="{{route('reservations.search')}}" class="search_form">
-            {{csrf_field()}}
-            <label>
-                <input type="search" class="" name="search" value="" placeholder="search" aria-label="検索...">
-
-            </label>
-        </form>
-        @else
-        @endif
-        <?php $user = Auth::user();?>
-
-
-
-        <div class="user_test">
-            <div class="user_login_icon user_icon_img">     
-                <a href="{{ route('users.show',$user->id) }}">
-                @if($user->image_path == '')
-                    <img class="user_icon_img_pic" src="{{ asset('no-image.png') }}" alt="">
-                @else
-                    <img class="user_icon_img_pic" src="{{ $user->image_path }}" alt="">
-                @endif
-
-            </a>
-        </div>
-
-    </div>
-        </div>
+    <x-search searchRes="{{route('clinicals.search')}}"/>
+    <?php $user = Auth::user();?>
+    <x-user-image/>
+</div>
 @section('content')
 
 
@@ -36,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-10 mt-5">
 
-            <x-test title="お客様一覧" />
+            <x-title title="お客様一覧" />
 
             <table class="table">
 
@@ -62,16 +38,18 @@
                 </tbody>
 
             </table>
+
+
         </div>
     </div>
 
-    <div class="d-grid gap-2 col-8 mx-auto my-5 ">
+    <!-- <div class="d-grid gap-2 col-8 mx-auto my-5 ">
         <a href="{{ route('clinicals.create') }}" class="btn btn_primary mb-5">
             <button class="btn btn_primary" type="button">新規作成</button>
         </a>
-    </div>
+    </div> -->
 
-    <x-table pageLink="clinicals" buttonTitle="新規作成"/>
+    <x-button title="clinicals"/>
 
 </div>
 </div>

@@ -31,7 +31,7 @@ class KarteController extends Controller
      */
     public function create()
     {
-        return view('kartes.create'); 
+
     }
 
     /**

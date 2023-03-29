@@ -1,10 +1,10 @@
 <?php
 
-namespace App\View\Components\Button;
+namespace App\View\Components;
 
 use Illuminate\View\Component;
 
-class create extends Component
+class UserImage extends Component
 {
     /**
      * Create a new component instance.
@@ -23,6 +23,6 @@ class create extends Component
      */
     public function render()
     {
-        return view('component.button.create');
+        return view('components.user-image');
     }
 }

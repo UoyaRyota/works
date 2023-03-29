@@ -1,16 +1,10 @@
 @extends('layouts.app')
-        <div class="position-fixed w-100 bg-white">
-        @if ( request()->is('*clinicals*') || request()->is('*reservations*') )
-        <form method="POST" action="{{route('reservations.search')}}" class="search_form">
-            {{csrf_field()}}
-            <label>
-                <input type="search" class="" name="search" value="" placeholder="search" aria-label="検索...">
+<div class="position-fixed w-100 bg-white d-flex">
+    <x-search searchRes="{{route('reservations.search')}}"/>
+    <?php $user = Auth::user();?>
+    <x-user-image/>
+</div>
 
-            </label>
-        </form>
-        @else
-        @endif
-        </div>
 
 @section('content')
 
@@ -18,7 +12,7 @@
     <div class="row justify-content-center">
         <div class="col-10 mt-5">
 
-            <x-test title="予約一覧" />
+            <x-title title="予約一覧" />
 
             <table class="table">
 

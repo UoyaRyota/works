@@ -12,13 +12,13 @@ class Button extends Component
      * @return void
      */
 
-    public $pageLink;
-    public $buttonTitle;
+    public $title;
+    // public $buttonTitle;
 
-    public function __construct($pageLink,$buttonTitle)
+    public function __construct($title)
     {
-        $this->pageLink = $pageLink;
-        $this->$buttonTitle = $buttonTitle;
+        $this->title = $title;
+        // $this->$buttonTitle = $buttonTitle;
     }
 
     /**
@@ -28,6 +28,6 @@ class Button extends Component
      */
     public function render()
     {
-        return view('components.button');
+        // return view('components.button');
     }
 }
