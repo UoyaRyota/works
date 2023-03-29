@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 <div class="position-fixed w-100 bg-white d-flex">
     <x-search searchRes="{{route('clinicals.search')}}"/>
     <?php $user = Auth::user();?>
@@ -43,13 +42,7 @@
         </div>
     </div>
 
-    <!-- <div class="d-grid gap-2 col-8 mx-auto my-5 ">
-        <a href="{{ route('clinicals.create') }}" class="btn btn_primary mb-5">
-            <button class="btn btn_primary" type="button">新規作成</button>
-        </a>
-    </div> -->
-
-    <x-button title="clinicals"/>
+    <x-button.link pageLink="{{ route('clinicals.create') }}" pageTitle="新規作成"/>
 
 </div>
 </div>

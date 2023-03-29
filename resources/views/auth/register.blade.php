@@ -71,9 +71,9 @@
                                     name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-                        <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                            <button class="btn btn_primary submit_type mb-5" type="submit">{{ __('登録') }}</button>
-                        </div>
+
+                        <x-button.form formTitle=""/>{{ __('登録') }}
+                        
 
                         <!-- <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">

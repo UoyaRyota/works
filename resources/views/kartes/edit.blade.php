@@ -24,10 +24,7 @@
                 @endif
 
             </div>
-
-            <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                <button class="btn btn_primary submit_type" type="submit">更新</button>
-            </div>
+            <x-button.form formTitle="更新"/>
 
         </form>
 

@@ -208,12 +208,9 @@
             <div class="form-group">
                 <label>その他:{{ $clinical->others }}</label>
             </div>
-
-            <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                <a href="{{ route('clinicals.edit', $clinical->id) }}" class="btn btn_primary">
-                    <button class="btn btn_primary" type="button">編集</button>
-                </a>
-            </div>
+            
+            <x-button.link pageLink="{{ route('clinicals.edit', $clinical->id) }}" pageTitle="編集"/>
+            
             
             <div class="row justify-content-center">
                 <div class="col-md-8">
@@ -235,11 +232,7 @@
                             @endforeach
                         </ul>
                         @endif
-
-                        <div class="d-grid gap-2 col-8 mx-auto my-5 ">
-                            <button class="btn btn_primary submit_type mb-5" type="submit">カルテを記入</button>
-                        </div>
-
+                        <x-button.form formTitle="カルテを記入"/>
                     </form>
                 </div>
             </div>
@@ -267,20 +260,6 @@
                           @endforeach
                       </tbody>
                       </table>
-
-                    <!-- <div class="mt-3">
-                        <p class="">投稿者：{{ $clinical->user->name }}</p>
-                        <div class="">
-                            <p class="card-title">投稿日時：{{ $karte->created_at }}</p>
-                            <p class="card-text">内容：{{ $karte->karte_body }}</p>
-                        </div>
-                    </div> -->
-<!-- 
-                    <div class="d-grid gap-2 col-8 mx-auto my-5 ">
-                        <a href="{{ route('kartes.edit', $karte->id) }}" class="btn btn_primary mb-5">
-                            <button class="btn btn_primary" type="button">編集</button>
-                        </a>
-                    </div> -->
 
                 </div>
             </div>

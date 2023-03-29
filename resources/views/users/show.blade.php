@@ -8,7 +8,7 @@
 
             @if($user->image_path == '')
             <div class="user_image">
-                <img src="{{ asset('build/assets/no-image.png') }}" alt="画像">
+                <img src="{{ asset('no-image.png') }}" alt="画像">
             </div>
             @else
             <div class="user_image">
@@ -23,11 +23,7 @@
 
         </div>
 
-        <div class="d-grid gap-2 col-8 mx-auto mt-5 ">
-            <a href="{{route('users.edit', $user->id)}}" class="btn btn_primary mb-2">
-                <button class="btn btn_primary" type="button">編集</button>
-            </a>
-        </div>
+        <x-button.link pageLink="{{route('users.edit', $user->id)}}" pageTitle="編集"/>
 
         <div class="mb-5">
             <a class="dropdown-item mb-5 text-center text-black-50" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">

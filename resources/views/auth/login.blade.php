@@ -58,9 +58,7 @@
                             </div>
                         </div>
 
-                        <div class="d-grid gap-2 col-8 mx-auto mt-4 ">
-                            <button class="btn btn_primary submit_type mb-5" type="submit">{{ __('ログイン') }}</button>
-                        </div>
+                        <x-button.form formTitle="{{ __('ログイン') }}"/>
 
                         <!-- <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">

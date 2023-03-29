@@ -357,11 +357,8 @@
                     </ul>
                     @endif
                 </div>   
-               
-                <x-button.create> ... </x-button.create>
-                <div class="d-grid gap-2 col-8 mx-auto my-5 ">
-                    <button class="btn btn_primary submit_type mb-5" type="submit">保存</button>
-                </div>
+
+                <x-button.form formTitle="保存"/>
 
             </form>
         </div>

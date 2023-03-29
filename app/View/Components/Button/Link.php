@@ -1,24 +1,22 @@
 <?php
 
-namespace App\View\Components;
+namespace App\View\Components\Button;
 
 use Illuminate\View\Component;
 
-class Button extends Component
+class Link extends Component
 {
     /**
      * Create a new component instance.
      *
      * @return void
      */
-
-    public $title;
-    // public $buttonTitle;
-
-    public function __construct($title)
+    public $pageLink;
+    public $pageTitle;
+    public function __construct($pageLink,$pageTitle)
     {
-        $this->title = $title;
-        // $this->$buttonTitle = $buttonTitle;
+        $this->pageLink = $pageLink;
+        $this->pageTitle = $pageTitle;
     }
 
     /**
@@ -28,6 +26,6 @@ class Button extends Component
      */
     public function render()
     {
-        // return view('components.button');
+        return view('components.button.link');
     }
 }

@@ -11,11 +11,7 @@
             </div>
         </div>
 
-        <div class="d-grid gap-2 col-8 mx-auto my-5 ">
-            <a href="{{ route('reservations.edit', $reservation->id) }}" class="btn btn_primary mb-5">
-                <button class="btn btn_primary" type="button">編集</button>
-            </a>
-        </div>
+        <x-button.link pageLink="{{ route('reservations.edit', $reservation->id) }}" pageTitle="編集"/>
 
     </div>
 </div>
