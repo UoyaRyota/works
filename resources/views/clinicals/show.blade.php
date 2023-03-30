@@ -211,7 +211,6 @@
             
             <x-button.link pageLink="{{ route('clinicals.edit', $clinical->id) }}" pageTitle="編集"/>
             
-            
             <div class="row justify-content-center">
                 <div class="col-md-8">
                     <form action="{{ route('kartes.store') }}" method="POST">
@@ -238,29 +237,16 @@
             </div>
 
             <div class="row justify-content-center">
-
                 <div class="col-12 mb-5">
                     <table class="table">
-                      <thead class="table_head">
-                          <tr class="table_head_row">
-                              <th class="table_head_row_cell table_right_left">日付</th>
-                          </tr>
-                      </thead>
-
-                      <tbody class="table_body">
-                          @foreach ($clinical->kartes as $karte)
-                          <tr class="table_body_row">
-                              <a href="{{ route('kartes.edit',$karte->id) }}">
-                                  <td class="table_body_row_cell">
-                                      <a href="{{ route('kartes.edit', $karte->id) }}"
-                                          class="widelink">{{ $karte->created_at }}</a>
-                                  </td>
-                              </a>
-                          </tr>
-                          @endforeach
-                      </tbody>
-                      </table>
-
+                        <x-table.head tableTitle="日付" tableTitleSec="" tableTitleTh=""/>
+                        <tbody class="table_body">
+                            @foreach ($clinical->kartes as $karte)
+                            <x-table.content contentLink="{{ route('kartes.edit', $karte->id) }}"
+                                contentTitle="{{ $karte->created_at }}" contentTitleSec="" contentTitleTh="" />
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
             </div>
 

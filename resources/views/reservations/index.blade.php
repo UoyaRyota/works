@@ -13,20 +13,16 @@
         <div class="col-10 mt-5">
 
             <x-title title="予約一覧" />
+            
 
             <table class="table">
-
-                <thead class="table_head">
-                    <tr class="table_head_row">
-                        <th class="table_head_row_cell table_left">日付</th>
-                        <th class="table_head_row_cell">時間</th>
-                        <th class="table_head_row_cell table_right">名前</th>
-                    </tr>
-                </thead>
-
+                <x-table.head tableTitle="日付" tableTitleSec="時間" tableTitleTh="名前" />
                 <tbody class="table_body">
                     @foreach ($reservations as $reservation)
-                    <tr class="table_body_row">
+                    <x-table.content contentLink="{{ route('reservations.show', $reservation->id) }}" contentTitle="{{ $reservation->reservation_date }}" 
+                    contentTitleSec="{{ $reservation->reservation_time }}" 
+                    contentTitleTh="{{ $reservation->user_name }}"/>
+                    <!-- <tr class="table_body_row">
                         <a href="{{ route('reservations.show', $reservation->id) }}">
 
                             <td class="table_body_row_cell">
@@ -44,7 +40,7 @@
                                     class="widelink">{{ $reservation->user_name }}</a>
                             </td>
                         </a>
-                    </tr>
+                    </tr> -->
                     @endforeach
                 </tbody>
 
