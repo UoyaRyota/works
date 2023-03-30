@@ -4,11 +4,9 @@
 <div class="row justify-content-center">
     <div class="col-10">
 
-        <form action="{{ route('kartes.update',$karte->id,$clinical->id) }}" method="POST">
+        <form action="{{ route('kartes.update',$karte->id) }}" method="POST">
             {{csrf_field()}}
             {{method_field('PATCH')}}
-            
-            <input type="hidden" name="clinical_id" value="{{ $clinical->id }}">
 
             <div class="form-group">
                 <label>カルテ</label>

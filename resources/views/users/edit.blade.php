@@ -34,8 +34,3 @@
     </div>
 </div>
 @endsection
-
-<!-- 要ファイル分割 -->
-<script>
-
-</script>

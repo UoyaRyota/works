@@ -38,7 +38,7 @@ return new class extends Migration
             $table->string('adl_clothes',10);
             $table->string('adl_bathing',10);
             $table->mediumText('others');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

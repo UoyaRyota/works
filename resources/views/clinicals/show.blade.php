@@ -16,6 +16,7 @@
             <div class="form-group">
                 <label>性別:{{ $clinical->sex }}</label>
             </div>
+            
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="sex" id="sex" value="男" @if (old('sex',
@@ -245,10 +246,19 @@
                             <x-table.content contentLink="{{ route('kartes.edit', $karte->id) }}"
                                 contentTitle="{{ $karte->created_at }}" contentTitleSec="" contentTitleTh="" />
                             @endforeach
+                            <form id="logout-form" action="{{ route('kartes.edit',$clinical) }}" method="POST">
+                                    @csrf
+                            </form>
                         </tbody>
                     </table>
                 </div>
             </div>
+
+            <form action="{{ route('clinicals.destroy', $clinical->id) }}" method='post' class="mb-5">
+                {{ csrf_field() }}
+                {{ method_field('DELETE') }}
+                <input type='submit' value='削除' class="btn btn-danger w-100 mb-5" onclick='return confirm("削除しますか？？");'>
+            </form>
 
     </div>
 </div>

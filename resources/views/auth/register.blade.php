@@ -72,7 +72,7 @@
                             </div>
                         </div>
 
-                        <x-button.form formTitle=""/>{{ __('登録') }}
+                        <x-button.form formTitle="{{ __('登録') }}"/>
                         
 
                         <!-- <div class="row mb-0">

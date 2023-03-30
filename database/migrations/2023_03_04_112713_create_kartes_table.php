@@ -19,8 +19,8 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('clinical_id');
             $table->text('karte_body');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('clinical_id')->references('id')->on('clinicals');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('clinical_id')->references('id')->on('clinicals')->onDelete('cascade');
         });
     }
 

@@ -73,6 +73,11 @@ class ClinicalController extends Controller
     public function edit($id)
     {
         $clinical = Clinical::find($id);
+
+        if(Auth::id() !== $clinical->user_id){
+            return abort(404);
+        }
+        
         return view('clinicals.edit', compact('clinical'));
     }
 
@@ -86,6 +91,11 @@ class ClinicalController extends Controller
     public function update(ClinicalRequest $request, $id)
     {
         $clinical = Clinical::find($id);
+
+        if(Auth::id() !== $clinical->user_id){
+            return abort(404);
+        }
+
         $clinical->update($request->all());
         return view('clinicals.show', compact('clinical'));
     }
@@ -98,7 +108,14 @@ class ClinicalController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $clinical = Clinical::find($id);
+
+        if(Auth::id() !== $clinical->user_id){
+            return abort(404);
+        }
+
+        $clinical -> delete();
+        return redirect()->route('clinicals.index');
     }
 
     public function search(Request $request) {

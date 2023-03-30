@@ -71,10 +71,10 @@ class KarteController extends Controller
      */
     public function edit($id)
     {
-        dd($id);
         $karte = Karte::find($id);
-        $clinical = Clinical::find($id);
-        return view('kartes.edit', compact('karte','clinical'));
+        // $clinical = Clinical::find($id);
+        // dd($clinical);
+        return view('kartes.edit', compact('karte'));
     }
 
     /**
@@ -88,13 +88,13 @@ class KarteController extends Controller
     {
 
         $karte = Karte::find($id);
-        $clinical = Clinical::find($request->clinical_id);
+        // $clinical = Clinical::find($request->clinical_id);
         
         // $clinical = $request->clinical_id;
-        dd($request);
+        // dd($request);
         $karte -> karte_body = $request -> karte_body;
         $karte -> save();
-        return redirect()->route('clinicals.show',[$clinical]);
+        return redirect()->route('clinicals.index');
     }
 
     /**

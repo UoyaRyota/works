@@ -42,6 +42,7 @@ class ReservationController extends Controller
     public function store(ReservationRequest $request)
     {
         $input = $request->all();
+        $input['user_id'] = Auth::id();
         Reservation::create($input);
 
         return redirect()->route('reservations.index');
@@ -98,7 +99,14 @@ class ReservationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $reservation = Reservation::find($id);
+
+        if(Auth::id() !== $reservation->user_id){
+            return abort(404);
+        }
+
+        $reservation -> delete();
+        return redirect()->route('reservations.index');
     }
 
     public function search(Request $request) {
