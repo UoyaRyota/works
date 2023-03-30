@@ -3,9 +3,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-
         <div class="col-10 mt-6 user_main">
-
             @if($user->image_path == '')
             <div class="user_image">
                 <img src="{{ asset('no-image.png') }}" alt="画像">
@@ -15,12 +13,10 @@
                 <img src="{{ $user->image_path }}" alt="画像">
             </div>
             @endif
-
             <h2 class="text-center mt-3">{{$user->name}}</h2>
             <div>
                 <h6 class="text-center">{{ $user->email }}</h6>
             </div>
-
         </div>
 
         <x-button.link pageLink="{{route('users.edit', $user->id)}}" pageTitle="編集"/>
