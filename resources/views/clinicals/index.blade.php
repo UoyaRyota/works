@@ -6,10 +6,25 @@
 </div>
 @section('content')
 
-
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-10 mt-5">
+
+        {{-- フラッシュメッセージ始まり --}}
+        {{-- 成功の時 --}}
+        @if (session('successMessage'))
+        <div class="alert alert-success text-center">
+            {{ session('successMessage') }}
+        </div> 
+        @endif
+        {{-- 失敗の時 --}}
+        @if (session('errorMessage'))
+        <div class="alert alert-danger text-center">
+            {{ session('errorMessage') }}
+        </div> 
+        @endif
+        {{-- フラッシュメッセージ終わり --}}
+        
             <x-title title="お客様一覧" />
             <table class="table">
                 <x-table.head tableTitle="名前" tableTitleSec="" tableTitleTh="" />

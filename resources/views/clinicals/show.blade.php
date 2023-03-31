@@ -3,7 +3,22 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        <di class="col-10">
+        
+            <di class="col-10">
+            {{-- フラッシュメッセージ始まり --}}
+            {{-- 成功の時 --}}
+            @if (session('successMessage'))
+            <div class="alert alert-success text-center">
+                {{ session('successMessage') }}
+            </div> 
+            @endif
+            {{-- 失敗の時 --}}
+            @if (session('errorMessage'))
+            <div class="alert alert-danger text-center">
+                {{ session('errorMessage') }}
+            </div> 
+            @endif
+            {{-- フラッシュメッセージ終わり --}}
 
             <div class="form-group">
                 <label>名前:{{ $clinical->name }}</label>
@@ -16,7 +31,7 @@
             <div class="form-group">
                 <label>性別:{{ $clinical->sex }}</label>
             </div>
-            
+
             <div class="form-group">
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="sex" id="sex" value="男" @if (old('sex',
@@ -259,6 +274,16 @@
                 {{ method_field('DELETE') }}
                 <input type='submit' value='削除' class="btn btn-danger w-100 mb-5" onclick='return confirm("削除しますか？？");'>
             </form>
+            <script>
+                function checkDelete(){
+                    let result = confirm('削除しますか？');
+                    if(result == true){
+                        return true;
+                    }else{
+                        return false;
+                    }
+                }
+            </script>
 
     </div>
 </div>

@@ -45,7 +45,16 @@ class ReservationController extends Controller
         $input['user_id'] = Auth::id();
         Reservation::create($input);
 
-        return redirect()->route('reservations.index');
+        $Res = $input;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '保存しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '保存に失敗しました。';
+        }
+
+        return redirect()->route('reservations.index')->with($messageKey,$flashMessage);
     }
 
     /**
@@ -87,6 +96,16 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::find($id);
         $reservation->update($request->all());
+
+        $Res = $reservation;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '更新しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '更新に失敗しました。';
+        }
+        session()->flash($messageKey,$flashMessage);
         
         return view('reservations.show', compact('reservation'));
     }
@@ -106,7 +125,17 @@ class ReservationController extends Controller
         }
 
         $reservation -> delete();
-        return redirect()->route('reservations.index');
+
+        $Res = $reservation;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '削除しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '削除に失敗しました。';
+        }
+
+        return redirect()->route('reservations.index')->with($messageKey,$flashMessage);
     }
 
     public function search(Request $request) {

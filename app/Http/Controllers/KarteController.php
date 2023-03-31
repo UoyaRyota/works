@@ -49,6 +49,17 @@ class KarteController extends Controller
         $karte -> user_id = Auth::id();
         $karte -> clinical_id = $request -> clinical_id;
         $karte -> save();
+
+        $Res = $karte;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '保存しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '保存に失敗しました。';
+        }
+        session()->flash($messageKey,$flashMessage);
+
         return view('clinicals.show', compact('clinical')); 
     }
 
@@ -94,7 +105,16 @@ class KarteController extends Controller
         // dd($request);
         $karte -> karte_body = $request -> karte_body;
         $karte -> save();
-        return redirect()->route('clinicals.index');
+
+        $Res = $karte;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '更新しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '更新に失敗しました。';
+        }
+        return redirect()->route('clinicals.index')->with($messageKey,$flashMessage);
     }
 
     /**

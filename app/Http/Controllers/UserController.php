@@ -93,6 +93,16 @@ class UserController extends Controller
 
         $user->save();
 
+        $Res = $user;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '保存しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '保存に失敗しました。';
+        }
+        session()->flash($messageKey,$flashMessage);
+
         return view('users.show', compact('user'));
     }
 

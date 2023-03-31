@@ -48,7 +48,16 @@ class ClinicalController extends Controller
         $input['user_id'] = Auth::id();
         Clinical::create($input);
 
-        return redirect()->route('clinicals.index');
+        $Res = $input;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '保存しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '保存に失敗しました。';
+        }
+
+        return redirect()->route('clinicals.index')->with($messageKey, $flashMessage);
     }
 
     /**
@@ -97,6 +106,17 @@ class ClinicalController extends Controller
         }
 
         $clinical->update($request->all());
+
+        $Res = $clinical;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '更新しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '更新に失敗しました。';
+        }
+        session()->flash($messageKey,$flashMessage);
+
         return view('clinicals.show', compact('clinical'));
     }
 
@@ -115,7 +135,16 @@ class ClinicalController extends Controller
         }
 
         $clinical -> delete();
-        return redirect()->route('clinicals.index');
+
+        $Res = $clinical;
+        if ($Res) {
+            $messageKey = 'successMessage';
+            $flashMessage = '削除しました。';
+        } else {
+            $messageKey = 'errorMessage';
+            $flashMessage = '削除に失敗しました。';
+        }
+        return redirect()->route('clinicals.index')->with($messageKey, $flashMessage);
     }
 
     public function search(Request $request) {
